@@ -11,14 +11,14 @@ typedef struct {
   bool is_owner;      // If this object owns the data or not
 } vector_t;
 
-static inline double get_vector_elem(const vector_t* vec, int i) {
-  assert(vec && i < vec->size);
-  return vec->data[i];
+static inline double get_vector_elem(const vector_t* v, int i) {
+  assert(v && i < v->size);
+  return v->data[i];
 }
 
-static inline void set_vector_elem(vector_t* vec, int i, double v) {
-  assert(vec && i < vec->size);
-  vec->data[i] = v;
+static inline void set_vector_elem(vector_t* v, int i, double value) {
+  assert(v && i < v->size);
+  v->data[i] = value;
 }
 
 vector_t* alloc_vector(int size);
